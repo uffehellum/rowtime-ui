@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function FinishRace() {
-    useEffect(()=> {
+    useEffect(() => {
         fetchItems()
     }, [])
 
@@ -22,7 +23,11 @@ function FinishRace() {
             <p>Finish each boat as they cross line</p>
             {items.map(item => (
                 <div key={item.id}>
-                    {item.employee_name}
+                    <Link to={`/employee/${item.id}`}>
+                        {item.employee_name}
+                        {item.profile_image && <img height="2em" src={item.profile_image} alt={item.employee_name} />}
+
+                    </Link>
                 </div>
             ))}
         </div>
