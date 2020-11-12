@@ -12,19 +12,18 @@ import Nav from '../Nav'
 function App() {
   return (
     <Router>
-      <div className="App">
+      <>
         <Nav/>
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/home' exact component={Home} />
           <Route path='/about' component={About} />
           <Route path='/finishrace' component={FinishRace} />
-          <Route path='/login' component={LoginProfile} />
+          <Route path='/loginprofile' component={LoginProfile} />
           <Route path='/startheadrace' component={StartHeadrace} />
           <Route path='/employee/:id' component={Employee} />
-
         </Switch>
-      </div>
+      </>
     </Router>
   );
 }

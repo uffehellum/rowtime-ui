@@ -1,0 +1,30 @@
+
+nav {
+    display: flex;
+    width: 100%;
+    /* justify-content: space-around; */
+    align-items: center;
+    min-height: 10vh;
+    background: lightblue;
+}
+  
+.nav-links {
+    /* width: 50%; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-links  li {
+    padding: 10px;
+}
+
+li.profile {
+    position: absolute;
+}
+
+li.profile + div {
+    position: relative;
+    top: 1vh;
+}

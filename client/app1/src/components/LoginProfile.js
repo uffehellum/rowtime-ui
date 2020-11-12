@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { loginAction } from '../actions'
+import { loginAction, logoutAction } from '../actions'
 
 export default function LoginProfile() {
     const login = useSelector(state => state.login)
@@ -8,7 +8,7 @@ export default function LoginProfile() {
         <Profile login={login} />
     ) : (
             <Login />
-    )
+        )
 }
 
 const Login = () => {
@@ -24,10 +24,7 @@ const Login = () => {
             [id]: value
         }))
     }
-    const login = () => {
-        dispatch(loginAction(state))
-        //    .then(this.transitionTo('/profile'))
-    }
+    const login = () => dispatch(loginAction(state))
     return (
         <>
             <h1>Login</h1>
@@ -60,11 +57,15 @@ const Login = () => {
     )
 }
 
-
-const Profile = ({ login }) => (
-    <div>
-        <h1>Profile</h1>
-        <div>Email</div>
-        <div>{login.name}</div>
-    </div>
-)
+const Profile = ({ login }) => {
+    const dispatch = useDispatch()
+    const logout = () => dispatch(logoutAction())
+    return (
+        <div>
+            <h1>Profile</h1>
+            <div>Email</div>
+            <div>{login.name}</div>
+            <button onClick={logout} >Logout</button>
+        </div>
+    )
+}

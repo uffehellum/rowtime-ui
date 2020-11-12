@@ -1,3 +1,4 @@
+import './Nav.css';
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
@@ -22,15 +23,12 @@ const Nav = () => (
 
 function LoginLogoutLink() {
     const login = useSelector(state => state.login)
-    return login.isLoggedIn ? (
-        <Link to="/profile">
-            <li>{login.name}</li>
-        </Link>
-    ) : (
-        <Link to="/login">
-            <li>Login</li>
+    return (
+        <Link to="/loginprofile">
+            <li>
+                { login.isLoggedIn ? "Profile "+login.name : "Login"}</li>
         </Link>
     )
-
 }
+
 export default Nav

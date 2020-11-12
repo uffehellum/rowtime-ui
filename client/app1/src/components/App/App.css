@@ -1,21 +1,10 @@
-.App {
+body {
   text-align: center;
-}
-
-nav {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 10vh;
-  background: lightblue;
 }
-
-.nav-links {
-  width: 50%;
+#root {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
+  width: 100px 200px;
 }
 
 #root {
